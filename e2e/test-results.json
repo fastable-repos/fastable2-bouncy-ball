@@ -62,13 +62,23 @@
   "suites": [],
   "errors": [
     {
+      "message": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.",
+      "stack": "Error: Playwright Test did not expect test.describe() to be called here.\nMost common reasons include:\n- You are calling test.describe() in a configuration file.\n- You are calling test.describe() in a file that is imported by the configuration file.\n- You have two different versions of @playwright/test. This usually happens\n  when one of the dependencies in your package.json depends on @playwright/test.\n    at TestTypeImpl._currentSuite (/tmp/work/d4283130-9847-487a-92eb-2875e2672b57/node_modules/playwright/lib/common/testType.js:75:13)\n    at TestTypeImpl._describe (/tmp/work/d4283130-9847-487a-92eb-2875e2672b57/node_modules/playwright/lib/common/testType.js:115:24)\n    at Function.describe (/tmp/work/d4283130-9847-487a-92eb-2875e2672b57/node_modules/playwright/lib/transform/transform.js:282:12)\n    at /tmp/work/d4283130-9847-487a-92eb-2875e2672b57/e2e/app.spec.ts:105:6",
+      "location": {
+        "file": "/tmp/work/d4283130-9847-487a-92eb-2875e2672b57/e2e/app.spec.ts",
+        "column": 6,
+        "line": 105
+      },
+      "snippet": "\u001b[90m   at \u001b[39mapp.spec.ts:105\n\n  103 | // ─── Tests ────────────────────────────────────────────────────────────────────\n  104 |\n> 105 | test.describe('Bouncy Ball Game', () => {\n      |      ^\n  106 |   test.beforeEach(async ({ page }) => {\n  107 |     await page.goto('/')\n  108 |     await resetGameData(page)"
+    },
+    {
       "message": "Error: No tests found",
       "stack": "Error: No tests found"
     }
   ],
   "stats": {
-    "startTime": "2026-02-28T02:32:48.411Z",
-    "duration": 1016,
+    "startTime": "2026-02-28T02:40:11.315Z",
+    "duration": 1522.7810000000004,
     "expected": 0,
     "skipped": 0,
     "unexpected": 0,
